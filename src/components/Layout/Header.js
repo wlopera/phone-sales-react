@@ -6,12 +6,12 @@ import HeaderPhoneButton from "./HeaderPhoneButton";
 import classes from "./Header.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Fragment>
       <div className={classes.header}>
         <div className={classes.divClass}>
-          <h1>Planeta de Celulares </h1>
+          <h1>Universo de Celulares</h1>
         </div>
         <nav className="navbar navbar-light">
           <ul className="navbar-nav">
@@ -37,7 +37,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <HeaderPhoneButton />
+        <HeaderPhoneButton onShow={props.onShowModal} />
       </div>
     </Fragment>
   );

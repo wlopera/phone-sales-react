@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
+import Columns from "./Columns";
 
 const PhoneSales = () => {
   const [data, setData] = useState([]);
+  const columns = Columns;
 
   useEffect(() => {
     const getData = async () => {
@@ -35,54 +37,7 @@ const PhoneSales = () => {
     getData();
   }, []);
 
-  const columns = [
-    {
-      dataField: "id",
-      text: "ID",
-      headerStyle: {
-        width: "5px",
-        backgroundColor: "green",
-      },
-    },
-    {
-      dataField: "brand",
-      headerAlign: "center",
-      text: "Marca",
-      headerStyle: {
-        width: "100px",
-        backgroundColor: "green",
-      },
-    },
-    {
-      dataField: "model",
-      headerAlign: "center",
-      text: "Modelo",
-      headerStyle: {
-        width: "100px",
-        backgroundColor: "green",
-      },
-    },
-    {
-      dataField: "description",
-      headerAlign: "center",
-      text: "Descripción",
-      headerStyle: {
-        width: "200px",
-        backgroundColor: "green",
-      },
-    },
-    {
-      dataField: "price",
-      headerAlign: "center",
-      text: "Precio",
-      headerStyle: {
-        width: "20px",
-        backgroundColor: "green",
-      },
-    },
-  ];
-
-  console.log(123, data, columns);
+  // console.log(123, data, columns);
 
   return (
     <>
