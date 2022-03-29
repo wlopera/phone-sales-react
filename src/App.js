@@ -5,11 +5,24 @@ import Home from "./components/UI/Home/Home";
 import PhoneSales from "./components/UI/PhoneSales/PhoneSales";
 
 import classes from "./App.module.css";
+import { useState } from "react";
+import PhoneForm from "./components/Phone/PhoneForm";
 
 const App = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const showModalHandler = () => {
+    setShowModal(true);
+  };
+
+  const hideModalHandler = () => {
+    setShowModal(false);
+  };
+
   return (
     <BrowserRouter>
-      <Header />
+      {showModal && <PhoneForm onClose={hideModalHandler} />}
+      <Header onShowModal={showModalHandler} />
       <div className={classes.divMain}>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
