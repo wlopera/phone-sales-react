@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
+import { useDispatch } from "react-redux";
 import Columns from "./Columns";
+import { phoneActions } from "../../../store/phone";
 
 const PhoneSales = () => {
   const [data, setData] = useState([]);
   const columns = Columns;
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getData = async () => {
@@ -32,6 +36,7 @@ const PhoneSales = () => {
       }
 
       setData(result);
+      dispatch(phoneActions.loadPhones(result));
     };
 
     getData();

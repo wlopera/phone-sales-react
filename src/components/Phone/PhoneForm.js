@@ -1,10 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import Modal from "../UI/Modal/Modal";
 import usePhoneInput from "../hooks/use-phone-input";
 import classes from "./PhoneForm.module.css";
 
 const Phone = (props) => {
+  const phones = useSelector((state) => state.phone.phones);
+
+  console.log("CELULARES: ", phones);
   const inNotEmpty = (value) => value.trim() !== "";
 
   const isNumberValid = (value) =>
