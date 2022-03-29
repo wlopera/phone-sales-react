@@ -1,0 +1,7 @@
+.divMain {
+  background: url("./assets/fondo.jpg") no-repeat fixed center;
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  background-size: 100%;
+}
