@@ -112,3 +112,11 @@
     color: #b40e0e;
     padding-bottom: 20px;
 }
+
+.headerModal {
+    background-color: #240370;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
