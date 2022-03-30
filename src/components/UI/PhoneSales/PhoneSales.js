@@ -3,6 +3,7 @@ import BootstrapTable from "react-bootstrap-table-next";
 import { useDispatch } from "react-redux";
 import Columns from "./Columns";
 import { phoneActions } from "../../../store/phone";
+import { useSelector } from "react-redux";
 
 const PhoneSales = () => {
   const [data, setData] = useState([]);
@@ -10,12 +11,14 @@ const PhoneSales = () => {
 
   const dispatch = useDispatch();
 
+  const phones = useSelector((state) => state.phone.phones);
+
   useEffect(() => {
     const getData = async () => {
       const response = await fetch(
         "https://react-http-9dad6-default-rtdb.firebaseio.com/phones.json"
       );
-      console.log(response);
+      // console.log(response);
 
       if (!response.ok) {
         throw new Error("Error al cargar los datos iniciales...");
@@ -35,20 +38,19 @@ const PhoneSales = () => {
         });
       }
 
-      setData(result);
       dispatch(phoneActions.loadPhones(result));
     };
 
     getData();
-  }, []);
+  }, [dispatch]);
 
-  // console.log(123, data, columns);
+  useEffect(() => {
+    setData(phones);
+  }, [phones]);
 
   return (
     <>
-      <h1>Ventana de celulares</h1>
-      <hr />
-      <div style={{ width: "75%" }}>
+      <div style={{ width: "75%", margin: "25px 25px" }}>
         <BootstrapTable
           keyField="id"
           data={data}

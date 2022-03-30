@@ -11,7 +11,8 @@ const phoneSlice = createSlice({
       state.phones = action.payload;
     },
     addPhone(state, action) {
-      state.phones = action.payload;
+      console.log("Agregar data: ", action.payload);
+      state.phones.push(action.payload);
     },
     deletePhone(state, action) {
       state.phones = action.payload;

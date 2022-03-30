@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { Image, Select } from "semantic-ui-react";
+import { useDispatch } from "react-redux";
 
 import Modal from "../UI/Modal/Modal";
 import usePhoneInput from "../hooks/use-phone-input";
@@ -9,12 +9,13 @@ import usePhoneSelect from "../hooks/use-phone-select";
 import classes from "./PhoneForm.module.css";
 import { brandsPhone, modelsPhone } from "../Utils/Utilities";
 
+import { phoneActions } from "../../store/phone";
+
 const Phone = (props) => {
   const [models, setModels] = useState([]);
   const [imagenUrl, setImagenUrl] = useState("cellphone.png");
-  const phones = useSelector((state) => state.phone.phones);
 
-  console.log("CELULARES: ", phones);
+  const dispatch = useDispatch();
 
   const isNotSelected = (value) => value !== "0";
 
@@ -112,23 +113,30 @@ const Phone = (props) => {
       return;
     }
 
-    const body = JSON.stringify({
-      brand: brandsPhone[modelValue].text,
+    const body = {
+      brand: brandsPhone[brandValue].text,
       model: models[modelValue].text,
       description: descriptionValue,
       imagen: imagenUrl,
       price: priceValue,
-    });
+    };
 
     console.log("Data a enviar: ", body);
 
-    await fetch(
+    const response = await fetch(
       "https://react-http-9dad6-default-rtdb.firebaseio.com/phones.json",
       {
         method: "POST",
-        body: body,
+        body: JSON.stringify(body),
       }
     );
+
+    const result = await response.json();
+
+    body.id = result.name;
+    body.key = result.name;
+
+    dispatch(phoneActions.addPhone(body));
 
     // resetBrand();
     // resetModel();
