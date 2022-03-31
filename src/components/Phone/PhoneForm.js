@@ -11,7 +11,7 @@ import { brandsPhone, modelsPhone } from "../Utils/Utilities";
 
 import { phoneActions } from "../../store/phone";
 
-const Phone = (props) => {
+const PhoneForm = (props) => {
   const [models, setModels] = useState([]);
   const [imagenUrl, setImagenUrl] = useState("cellphone.png");
 
@@ -146,7 +146,7 @@ const Phone = (props) => {
   };
 
   return (
-    <Modal onCancel={props.onClose}>
+    <Modal onClose={props.onClose}>
       <form onSubmit={submitHandler}>
         <h1 className={classes.headerModal}>Agregar Celular</h1>
         <div className="row">
@@ -239,4 +239,4 @@ const Phone = (props) => {
   );
 };
 
-export default Phone;
+export default PhoneForm;

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Layout/Header";
 import Home from "./components/UI/Home/Home";
 import PhoneSales from "./components/UI/PhoneSales/PhoneSales";
+import Total from "./components/UI/Total/Total";
 
 import classes from "./App.module.css";
 import { useState } from "react";
@@ -26,8 +27,8 @@ const App = () => {
       <div className={classes.divMain}>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
-          <Route exact path="/home" element={<Home />}></Route>
           <Route exact path="/sales" element={<PhoneSales />}></Route>
+          <Route exact path="/totals" element={<Total />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
