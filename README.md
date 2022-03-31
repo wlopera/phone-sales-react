@@ -13,10 +13,15 @@ Aplicación de React de estudio:
 ![Captura-11](https://user-images.githubusercontent.com/7141537/160642586-cd205353-e37d-4afb-aa98-155c599b0c80.PNG)
 
 ## Salida
+![Captura1](https://user-images.githubusercontent.com/7141537/161099572-6cd9938f-1217-47e8-ac7d-f54322f8daa3.PNG)
 ![Captura](https://user-images.githubusercontent.com/7141537/160642590-6bb3f684-1e40-420e-b5d9-d41f67f8a1d6.PNG)
 ![Captura-4](https://user-images.githubusercontent.com/7141537/160642597-d2996719-a6c9-40fe-bfcd-e04a8f9532c9.PNG)
 
 ## Agregar celular - Modal
-![Captura](https://user-images.githubusercontent.com/7141537/160710445-cbbe2e7e-8815-4078-b2de-0b1e17d4ec42.PNG)
-![Captura1](https://user-images.githubusercontent.com/7141537/160710438-d58dcdf5-d97b-4d8f-a9aa-03d7a3496599.PNG)
-![Captura3](https://user-images.githubusercontent.com/7141537/160710441-7834e3d8-aa84-4c0b-830b-4b3932328bd2.PNG)
+![Captura](https://user-images.githubusercontent.com/7141537/160946604-f8f8a5a0-be32-4823-a99c-a38dc93fe556.PNG)
+![Captura](https://user-images.githubusercontent.com/7141537/160947096-47e72bcf-d78b-40cd-9ed2-e6413ec59b41.PNG)
+![Captura](https://user-images.githubusercontent.com/7141537/160946983-2a9dd190-218b-4b75-9da5-269b14bda003.PNG)
+![Captura](https://user-images.githubusercontent.com/7141537/160946731-7cbd469e-5b9b-4211-bdb5-203eda696756.PNG)
+
+## Totales (Se cambio la vista Inicio por Totales)
+![Captura](https://user-images.githubusercontent.com/7141537/161099408-6778ffe8-5d2b-40c9-9a71-c97d96491f65.PNG)

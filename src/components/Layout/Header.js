@@ -15,17 +15,7 @@ const Header = (props) => {
         </div>
         <nav className="navbar navbar-light">
           <ul className="navbar-nav">
-            <li key={1}>
-              <NavLink
-                className={(navData) =>
-                  navData.isActive ? classes.active : classes.linkClass
-                }
-                to="/home"
-              >
-                Inicio
-              </NavLink>
-            </li>
-            <li key={2} className="nav-item">
+            <li key={1} className="nav-item">
               <NavLink
                 className={(navData) =>
                   navData.isActive ? classes.active : classes.linkClass
@@ -33,6 +23,16 @@ const Header = (props) => {
                 to="/sales"
               >
                 Celulares
+              </NavLink>
+            </li>
+            <li key={2}>
+              <NavLink
+                className={(navData) =>
+                  navData.isActive ? classes.active : classes.linkClass
+                }
+                to="/totals"
+              >
+                Totales
               </NavLink>
             </li>
           </ul>

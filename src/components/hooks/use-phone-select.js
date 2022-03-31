@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 
 const initialInputState = {
-  value: "",
+  value: "0",
   isTouched: false,
 };
 
@@ -30,7 +30,7 @@ const inputStateReducer = (state, action) => {
   return initialInputState;
 };
 
-const usePhoneInput = (validateValue) => {
+const usePhoneSelect = (validateValue) => {
   const [inputState, dispatch] = useReducer(
     inputStateReducer,
     initialInputState
@@ -39,8 +39,8 @@ const usePhoneInput = (validateValue) => {
   const valueIsValid = validateValue(inputState.value);
   const hasError = !valueIsValid && inputState.isTouched;
 
-  const valueChangeHandler = (event) => {
-    dispatch({ type: "INPUT", value: event.target.value });
+  const valueChangeHandler = (event, record) => {
+    dispatch({ type: "INPUT", value: record.value });
   };
 
   const inputBlurHandler = () => {
@@ -61,4 +61,4 @@ const usePhoneInput = (validateValue) => {
   };
 };
 
-export default usePhoneInput;
+export default usePhoneSelect;
